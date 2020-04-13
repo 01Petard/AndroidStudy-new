@@ -12,6 +12,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.hzxcompany.androidstudy.AboutAdapter.FourthActivity;
 import com.hzxcompany.androidstudy.DialogDemo.FifthActivity;
 import com.hzxcompany.androidstudy.Fragment.ContainerActivity;
+import com.hzxcompany.androidstudy.Fragment.SeventhActivity;
 import com.hzxcompany.androidstudy.FriendListDemo.FriendListTest;
 import com.hzxcompany.androidstudy.IntentDemo.SixthActivity;
 import com.hzxcompany.androidstudy.LinearLayout.FirstActivity;
@@ -114,7 +115,7 @@ public class MainActivity extends AppCompatActivity {
                     intent = new Intent(MainActivity.this, FifthActivity.class);
                     break;
                 case R.id.btn_main_12:
-                    intent = new Intent(MainActivity.this, ContainerActivity.class);
+                    intent = new Intent(MainActivity.this, SeventhActivity.class);
                     break;
                 case R.id.btn_main_13:
                     intent = new Intent(MainActivity.this, ProgressActivity.class);

@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Fragment.TestFragmentActivity"></activity>
+        <activity android:name=".Fragment.SeventhActivity"></activity>
+        <activity android:name=".Fragment.TestFragmentActivity" />
         <activity android:name=".IntentDemo.SixthActivity" />
         <activity android:name=".IntentDemo.IntentResearch_2" />
         <activity android:name=".IntentDemo.IntentResearch_1" />
