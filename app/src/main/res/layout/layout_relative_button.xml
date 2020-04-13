@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <Button
+        android:id="@+id/b1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Button1"
+        android:textAllCaps="false"/>
+    <Button
+        android:layout_toRightOf="@id/b1"
+        android:id="@+id/b2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Button2"
+        android:textAllCaps="false"/>
+    <Button
+        android:layout_below="@id/b2"
+        android:layout_toRightOf="@id/b1"
+        android:id="@+id/b3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Button3"
+        android:textAllCaps="false"/>
+    <Button
+        android:layout_below="@id/b2"
+        android:layout_toRightOf="@id/b3"
+        android:id="@+id/b4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Button4"
+        android:textAllCaps="false"/>
+    <Button
+        android:layout_below="@id/b4"
+        android:layout_toRightOf="@id/b3"
+        android:id="@+id/b5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Button5"
+        android:textAllCaps="false"/>
+</RelativeLayout>

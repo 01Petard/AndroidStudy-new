@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".RelativeLayout.SecondActivity"
+    android:padding="15dp"
+    android:orientation="vertical">
+
+    <Button
+        android:id="@+id/btn_sec_1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Button的相对布局"
+        android:textAllCaps="false" />
+    <Button
+        android:id="@+id/btn_sec_2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="文本框布局"
+        android:textAllCaps="false" />
+    <Button
+        android:id="@+id/btn_sec_3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="注册页面的实现"
+        android:textAllCaps="false" />
+
+
+</LinearLayout>

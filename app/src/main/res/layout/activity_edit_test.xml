@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".RelativeLayout.EditTestActivity"
+    android:padding="15dp">
+
+    <TextView
+        android:id="@+id/tv_1"
+        android:text="请输入密码:"
+        android:textSize="30sp"
+        android:textColor="#906d39"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <EditText
+        android:layout_below="@id/tv_1"
+        android:id="@+id/et_1"
+        android:layout_width="match_parent"
+        android:layout_height="50dp" />
+    <Button
+        android:layout_toLeftOf="@id/btn_2"
+        android:layout_below="@id/et_1"
+        android:id="@+id/btn_1"
+        android:text="登录"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp" />
+    <Button
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/et_1"
+        android:id="@+id/btn_2"
+        android:text="取消"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp" />
+</RelativeLayout>
+

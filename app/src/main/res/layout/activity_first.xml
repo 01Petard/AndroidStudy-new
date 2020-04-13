@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LinearLayout.FirstActivity"
+    android:padding="15dp"
+    android:orientation="vertical">
+
+    <Button
+        android:id="@+id/btn_fir_1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="水平布局Horizontal"
+        android:textAllCaps="false" />
+    <Button
+        android:id="@+id/btn_fir_2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="垂直布局Vertical"
+        android:textAllCaps="false" />
+    <Button
+        android:id="@+id/btn_fir_3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="权重Weight"
+        android:textAllCaps="false" />
+
+
+</LinearLayout>

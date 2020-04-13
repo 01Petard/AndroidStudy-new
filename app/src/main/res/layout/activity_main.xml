@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:padding="15dp"
+    android:scrollbars="none">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/btn_main_1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="线性布局（LinearLayout）"
+            android:textAllCaps="false" />
+        <Button
+            android:id="@+id/btn_main_2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="相对布局（RelativeLayout）"
+            android:textAllCaps="false" />
+        <Button
+            android:id="@+id/btn_main_3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="计算器（表格布局TableLayout）"
+            android:textAllCaps="false" />
+        <Button
+            android:id="@+id/btn_main_4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="计算器（网格布局GirdLayout）"
+            android:textAllCaps="false" />
+        <Button
+            android:id="@+id/btn_main_5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="跑马灯"
+            android:textAllCaps="false" />
+        <Button
+            android:id="@+id/btn_main_6"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="单选框RadioButton、复选框CheckBox、图片ImageView、（测试一下Button的跑马灯Coded by hzx）"
+            android:ellipsize="marquee"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:marqueeRepeatLimit="marquee_forever"
+            android:singleLine="true"
+
+            android:textAllCaps="false" />
+        <Button
+            android:id="@+id/btn_main_7"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Intent和Activity的生命周期"
+            android:textAllCaps="false" />
+        <Button
+            android:id="@+id/btn_main_8"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="猜扑克"
+            android:textAllCaps="false" />
+        <Button
+            android:id="@+id/btn_main_9"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Adapter有关的学习"
+            android:textAllCaps="false" />
+        <Button
+            android:id="@+id/btn_main_10"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="好友列表"
+            android:textAllCaps="false" />
+        <Button
+            android:id="@+id/btn_main_11"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="AlertDialog"
+            android:textAllCaps="false" />
+        <Button
+            android:id="@+id/btn_main_12"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Fragment"
+            android:textAllCaps="false" />
+        <Button
+            android:id="@+id/btn_main_13"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="ProgressBar和ProgressDialog"
+            android:textAllCaps="false" />
+        <Button
+            android:layout_marginTop="1000dp"
+            android:id="@+id/btn_main_14"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="ProgressBar和ProgressDialog"
+            android:textAllCaps="false" />
+
+    </LinearLayout>
+
+
+
+
+
+</ScrollView>

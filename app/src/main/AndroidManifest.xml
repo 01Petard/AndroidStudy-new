@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.hzxcompany.androidstudy">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".Fragment.TestFragmentActivity"></activity>
+        <activity android:name=".IntentDemo.SixthActivity" />
+        <activity android:name=".IntentDemo.IntentResearch_2" />
+        <activity android:name=".IntentDemo.IntentResearch_1" />
+        <activity android:name=".ProgressBar.ProgressActivity" />
+        <activity android:name=".TestDemo.LogInActivity" />
+        <activity android:name=".DialogDemo.AllAlertDialogActivity" />
+        <activity android:name=".DialogDemo.RadioDialogActivity" />
+        <activity android:name=".Fragment.ContainerActivity" />
+        <activity android:name=".DialogDemo.CustomeDialogActivity" />
+        <activity android:name=".DialogDemo.CheckDialogActivity" />
+        <activity android:name=".DialogDemo.ChoicesDialogActivity" />
+        <activity android:name=".DialogDemo.FifthActivity" />
+        <activity android:name=".FriendListDemo.FriendListTest" />
+        <activity android:name=".AboutAdapter.SimpleAdapter.FriendList" />
+        <activity android:name=".AboutAdapter.ListView.ListViewTestActivity" />
+        <activity android:name=".AboutAdapter.GirdView.GirdViewActivity" />
+        <activity android:name=".AboutAdapter.FourthActivity" />
+        <activity android:name=".AboutAdapter.ListView.ListViewActivity" />
+        <activity android:name=".TestDemo.PokerActivity" />
+        <activity android:name=".TestDemo.Calculator2Activity" />
+        <activity android:name=".TestDemo.Calculator1Activity" />
+        <activity android:name=".OtherView.ThirdActivity" />
+        <activity android:name=".RelativeLayout.SecondActivity" />
+        <activity android:name=".LinearLayout.FirstActivity" />
+        <activity android:name=".OtherView.ImageViewActivity" />
+        <activity android:name=".OtherView.RadioButtonActivity" />
+        <activity android:name=".OtherView.CheckBoxActivity" />
+        <activity android:name=".IntentDemo.TestIntentActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.ACTION_START" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.MyCategory" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".OtherView.MarqueenActivity" />
+        <activity android:name=".RelativeLayout.RegisteredActivity" />
+        <activity android:name=".RelativeLayout.EditTestActivity" />
+        <activity android:name=".RelativeLayout.RelativeLayoutActivity" />
+        <activity android:name=".LinearLayout.WeightActivity" />
+        <activity android:name=".LinearLayout.VerticalActivity" />
+        <activity android:name=".LinearLayout.HorizontalActivity" />
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

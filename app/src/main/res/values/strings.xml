@@ -1,0 +1,36 @@
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+    <string name="app_name">AndroidStudy</string>
+    <string name="marqueen">
+        跑马灯的实现关键代码：
+        android:singleLine="true"
+        android:ellipsize="marquee"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:marqueeRepeatLimit="marquee_forever"
+        然后还得在java代码中选中控件，例如：
+        mtv1.setSelected(true);
+    </string>
+    <string name="marqueen_word">
+        Made by hzx.Made by hzx.Made by hzx.Made by hzx.Made by hzx.Made by hzx.Made by hzx.Made by hzx.Made by hzx.Made by hzx.
+    </string>
+    <string name="relife">↑↑↓↓←→←→BABA</string>
+    <string-array name="list">
+        <item android:state_focused="true">飞行模式</item>
+        <item android:state_focused="true">重新启动</item>
+        <item android:state_focused="true">数据网络模式</item>
+
+    </string-array>
+
+    <style name="CustomDialog" parent="@android:style/Theme.Dialog">
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowAnimationStyle">@android:style/Animation.Dialog</item>
+        <item name="android:windowSoftInputMode">stateUnspecified|adjustPan</item>
+    </style>
+
+    <style name="CustomProgressDialog" parent="@style/CustomDialog">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowNoTitle">true</item>
+    </style>
+</resources>

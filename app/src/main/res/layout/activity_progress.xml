@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ProgressBar.ProgressActivity"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:padding="10dp">
+
+    <ProgressBar
+        android:layout_marginTop="30dp"
+        android:id="@+id/pb1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <ProgressBar
+        android:layout_marginTop="20dp"
+        android:id="@+id/pb2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+        android:max="100"
+        android:progress="30"/>
+    <Button
+        android:layout_marginTop="30dp"
+        android:id="@+id/btn_start"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="模拟进度"/>
+    <Button
+        android:id="@+id/btn_restart"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="重置进度"/>
+
+    <ProgressBar
+        android:id="@+id/pb3"
+        style="@style/MyProgressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp" />
+
+    <Button
+        android:layout_marginTop="40dp"
+        android:id="@+id/btn_progress_dialog1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="滚动加载条ProgressDialog"
+        android:textAllCaps="false"/>
+    <Button
+        android:id="@+id/btn_progress_dialog2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="水平加载条ProgressDialog"
+        android:textAllCaps="false"/>
+    <Button
+        android:id="@+id/btn_progress_dialog3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="自定义滚动加载条ProgressDialog"
+        android:textAllCaps="false"/>
+    <Button
+        android:id="@+id/btn_return"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="返回MainActivity"
+        android:textAllCaps="false"/>
+
+</LinearLayout>

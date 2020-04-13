@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="15dp"
+    tools:context=".AboutAdapter.FourthActivity">
+
+    <Button
+        android:id="@+id/btn_fou_1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="ListView的Demo"
+        android:textAllCaps="false" />
+    <Button
+        android:id="@+id/btn_fou_2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="ListView作业"
+        android:textAllCaps="false" />
+    <Button
+        android:id="@+id/btn_fou_3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="GirdView的Demo"
+        android:textAllCaps="false" />
+    <Button
+        android:id="@+id/btn_fou_4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="好友列表"
+        android:textAllCaps="false" />
+
+</LinearLayout>
