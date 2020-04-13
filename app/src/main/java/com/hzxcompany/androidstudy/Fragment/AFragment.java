@@ -20,13 +20,11 @@ public class AFragment extends Fragment {
     private BFragment bFragment;
     private TextView mTvTitle;
     private Button mBtnChange,mBtnReset,mBtnMessage;
-    private String title;
     private IOnMessageClick listener;
 
     public AFragment(){ }
-    public AFragment(String title){ this.title = title; }
 
-    public static AFragment newInstance(String title){
+    static AFragment newInstance(String title){
         AFragment aFragment = new AFragment();
         Bundle bundle = new Bundle();
         bundle.putString("title",title);
@@ -51,18 +49,16 @@ public class AFragment extends Fragment {
     @Override
     //onCreateView是创建的时候调用
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-
-        Log.i("AFragment","----onCreateView----");
-        //返回一个View类型的组件
+        Log.i("AFragment","----onCreateView(A)----");
         return inflater.inflate(R.layout.fragment_a,container,false);
     }
 
     @Override
     //onViewCreated是在onCreateView后被触发的事件
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        Log.i("AFragment","----onViewCreated(A)----");
         super.onViewCreated(view, savedInstanceState);
         mTvTitle = view.findViewById(R.id.tv_title);
-//        mTvTitle.setText("woshicanshua");
         if(getArguments() != null){
             mTvTitle.setText(getArguments().getString("title"));
         }
@@ -95,7 +91,6 @@ public class AFragment extends Fragment {
         mBtnMessage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                ((ContainerActivity)getActivity()).setData("你好");
                 listener.onClick("你好啊");
 
             }
