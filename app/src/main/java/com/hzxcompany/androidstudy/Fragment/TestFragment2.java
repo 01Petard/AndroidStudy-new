@@ -19,8 +19,4 @@ public class TestFragment2 extends Fragment {
         return inflater.inflate(R.layout.fragment_test_2,container,false);
     }
 
-    @Override
-    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
-        super.onViewCreated(view, savedInstanceState);
-    }
 }

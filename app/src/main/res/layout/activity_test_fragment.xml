@@ -6,56 +6,35 @@
     android:layout_height="match_parent"
     tools:context=".Fragment.TestFragmentActivity">
     <LinearLayout
+        android:id="@+id/linearlayout_container"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
-        <LinearLayout
-            android:id="@+id/ll1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:gravity="center"
-            android:background="#038678">
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@mipmap/amiya" />
-            <TextView
-                android:layout_marginLeft="10dp"
-                android:padding="5dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Fragment标题"
-                android:textSize="30sp"
-                android:textColor="#fff"
-                android:background="@drawable/text_border1"/>
-        </LinearLayout>
-
-        <FrameLayout
-            android:id="@+id/framelayout_container"
-            android:layout_width="match_parent"
-            android:layout_height="631dp">
-        </FrameLayout>
+        android:layout_height="50dp">
     </LinearLayout>
-    <LinearLayout
-        android:id="@+id/ll2"
-        android:layout_alignParentBottom="true"
+    <FrameLayout
+        android:layout_marginTop="50dp"
+        android:layout_marginBottom="50dp"
+        android:id="@+id/framelayout_container"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
+        android:background="#eeeeee">
+    </FrameLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
         android:orientation="horizontal">
-
         <Button
             android:id="@+id/btn_fragment_1"
-            android:layout_weight="1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="第一个"/>
+            android:layout_weight="1"
+            android:text="第一个" />
         <Button
             android:id="@+id/btn_fragment_2"
-            android:layout_weight="1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="第二个"/>
+            android:layout_weight="1"
+            android:text="第二个" />
     </LinearLayout>
 
 </RelativeLayout>

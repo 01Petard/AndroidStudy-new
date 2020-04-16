@@ -26,7 +26,7 @@
         <activity android:name=".FriendListDemo.FriendListTest" />
         <activity android:name=".AboutAdapter.SimpleAdapter.FriendList" />
         <activity android:name=".AboutAdapter.ListView.ListViewTestActivity" />
-        <activity android:name=".AboutAdapter.GirdView.GirdViewActivity" />
+        <activity android:name=".AboutAdapter.GridView.GridViewActivity" />
         <activity android:name=".AboutAdapter.FourthActivity" />
         <activity android:name=".AboutAdapter.ListView.ListViewActivity" />
         <activity android:name=".TestDemo.PokerActivity" />
