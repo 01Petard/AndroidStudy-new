@@ -20,5 +20,12 @@
         android:layout_height="wrap_content"
         android:text="Fragment作业"
         android:textAllCaps="false" />
+    <Button
+        android:id="@+id/btn_sev_3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="课堂练习"
+        android:textAllCaps="false" />
+
 
 </LinearLayout>

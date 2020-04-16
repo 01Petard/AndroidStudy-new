@@ -7,7 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-import com.hzxcompany.androidstudy.AboutAdapter.GirdView.GirdViewActivity;
+import com.hzxcompany.androidstudy.AboutAdapter.GridView.GridViewActivity;
 import com.hzxcompany.androidstudy.AboutAdapter.ListView.ListViewActivity;
 import com.hzxcompany.androidstudy.AboutAdapter.ListView.ListViewTestActivity;
 import com.hzxcompany.androidstudy.AboutAdapter.SimpleAdapter.FriendList;
@@ -41,7 +41,7 @@ public class FourthActivity extends AppCompatActivity {
         mBtn3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(FourthActivity.this, GirdViewActivity.class);
+                Intent intent = new Intent(FourthActivity.this, GridViewActivity.class);
                 startActivity(intent);
             }
 
