@@ -16,14 +16,31 @@ import java.util.ArrayList;
 public class FriendAdapter extends BaseAdapter {
     private LayoutInflater inflater;
     private ArrayList<Friend> friends;
+
     public FriendAdapter(Context context, ArrayList<Friend> friends){
         inflater = LayoutInflater.from(context);
         if(friends!=null){
             this.friends = friends;
         }else{
-            this.friends = new ArrayList<Friend>();
+            this.friends = new ArrayList<>();
         }
     }
+    public void addItem(Friend friend){
+        friends.add(friend);
+        this.notifyDataSetChanged();
+    }
+    public void updateItem(int id,Friend friend){
+        friends.set(id, friend);
+        this.notifyDataSetChanged();
+    }
+    public void removeItem(int position){
+        if(position >=0 && position<= friends.size()){
+            friends.remove(position);
+        }
+        //删除之后通知listview更新数据
+        this.notifyDataSetChanged();
+    }
+
     /**
      * 返回当前数据集中的数据条数
      */
@@ -59,7 +76,7 @@ public class FriendAdapter extends BaseAdapter {
         //获取数据
         Friend friend = friends.get(position);
         // 将数据绑定到item界面上
-        holder.iv.setImageResource(friend.getHead());
+        holder.iv.setImageResource(friend.getIcon());
         holder.tvId.setText("ID:"+friend.getId() + "");
         holder.tvName.setText("姓名:"+friend.getName());
         holder.tvSex.setText("性别:"+friend.getSex());

@@ -1,21 +1,20 @@
 package com.hzxcompany.androidstudy.FriendListDemo;
 
-import java.util.HashMap;
-import java.util.Map;
+import com.hzxcompany.androidstudy.R;
 
 public class Friend {
-    private int head;
+    private int icon;
     private int id;
     private String name;
     private String sex;
     private String phone;
 
-    public int getHead() {
-        return head;
+    public int getIcon() {
+        return icon;
     }
 
-    public void setHead(int head) {
-        this.head = head;
+    public void setIcon(int head) {
+        this.icon = head;
     }
 
     public int getId() {
@@ -53,8 +52,15 @@ public class Friend {
     public Friend() {
     }
 
-    public Friend(int head,int id, String name, String sex, String phone) {
-        this.head = head;
+    public Friend(int id,String name,String sex,String phone){
+//        this.id = id;
+//        this.name = name;
+//        this.sex = sex;
+//        this.phone = phone;
+        this(R.mipmap.friend_icon,id,name,sex,phone);
+    }
+    public Friend(int icon,int id, String name, String sex, String phone) {
+        this.icon = icon;
         this.id = id;
         this.name = name;
         this.sex = sex;
