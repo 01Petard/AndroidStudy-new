@@ -191,7 +191,7 @@ public class FriendListTest extends AppCompatActivity {
                                     }
                                 }
                                 adapter.updateItem(position,friend);
-                                biz.updateFriend(position,friend);
+//                                biz.updateFriend(position,friend);
                                 adapter.notifyDataSetChanged();
                                 Toast.makeText(FriendListTest.this, "好友信息修改完毕！", Toast.LENGTH_SHORT).show();
 
