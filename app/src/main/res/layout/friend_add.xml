@@ -8,7 +8,28 @@
     android:padding="15dp">
 
     <LinearLayout
+        android:id="@+id/ll_0"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="70dp"
+            android:layout_height="50dp"
+            android:text="I D 号："
+            android:textSize="20sp"/>
+        <EditText
+            android:id="@+id/friend_id"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="id号"
+            android:textSize="20sp"
+            android:inputType="text"
+            android:hint=""/>
+    </LinearLayout>
+    <LinearLayout
         android:id="@+id/ll_1"
+        android:layout_below="@id/ll_0"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
@@ -20,7 +41,6 @@
             android:textSize="20sp"/>
         <EditText
             android:id="@+id/friend_name"
-            android:layout_toRightOf="@id/tv_intent_rech_1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="20sp"
@@ -42,7 +62,6 @@
             android:textSize="20sp"/>
         <EditText
             android:id="@+id/friend_phone"
-            android:layout_toRightOf="@id/tv_intent_rech_2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="20sp"

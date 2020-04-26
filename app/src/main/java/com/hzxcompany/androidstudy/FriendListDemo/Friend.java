@@ -4,7 +4,7 @@ import com.hzxcompany.androidstudy.R;
 
 public class Friend {
     private int icon;
-    private int id;
+    private String id;
     private String name;
     private String sex;
     private String phone;
@@ -17,11 +17,11 @@ public class Friend {
         this.icon = head;
     }
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -52,14 +52,10 @@ public class Friend {
     public Friend() {
     }
 
-    public Friend(int id,String name,String sex,String phone){
-//        this.id = id;
-//        this.name = name;
-//        this.sex = sex;
-//        this.phone = phone;
+    public Friend(String id,String name,String sex,String phone){
         this(R.mipmap.friend_icon,id,name,sex,phone);
     }
-    public Friend(int icon,int id, String name, String sex, String phone) {
+    public Friend(int icon,String id, String name, String sex, String phone) {
         this.icon = icon;
         this.id = id;
         this.name = name;

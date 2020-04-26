@@ -20,7 +20,6 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.hzxcompany.androidstudy.AboutAdapter.SimpleAdapter.FriendList;
 import com.hzxcompany.androidstudy.R;
 
 import java.lang.reflect.Method;
@@ -37,7 +36,6 @@ public class FriendListTest extends AppCompatActivity {
     FriendBiz biz = new FriendBiz();
     //注意！此处的friends列表不是FriendDao类的friends，仅仅是一个替身
     ArrayList<Friend> friends = biz.getAllFriends();
-    private int max_count = friends.size();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -67,6 +65,7 @@ public class FriendListTest extends AppCompatActivity {
         switch (item.getItemId()) {
             case R.id.menu_add:
                 View add_view = LayoutInflater.from(FriendListTest.this).inflate(R.layout.friend_add,null);
+                id = add_view.findViewById(R.id.friend_id);
                 name = add_view.findViewById(R.id.friend_name);
                 phone = add_view.findViewById(R.id.friend_phone);
                 sexGroup = add_view.findViewById(R.id.friend_sex);
@@ -76,34 +75,61 @@ public class FriendListTest extends AppCompatActivity {
                         sex = group.findViewById(checkedId);
                     }
                 });
-                AlertDialog.Builder builder = new AlertDialog.Builder(FriendListTest.this);
-                builder.setView(add_view)
+                //获取好友列表最后一位好友的对象
+                Friend friend_last = friends.get(adapter.getCount()-1);
+                //获取最后一位好友的id值
+                String friend_add_id = friend_last.getId();
+                //将对话框中的id值设为最后一位好友的id值+1
+                id.setText(String.valueOf(Integer.parseInt(friend_add_id)+1));
+                final AlertDialog alertDialog = new AlertDialog.Builder(FriendListTest.this)
+                        .setView(add_view)
                         .setTitle("添加")
                         .setIcon(R.drawable.friend_add)
-                        .setPositiveButton("确定", new DialogInterface.OnClickListener() {
+                        .setPositiveButton("确定",null)
+                        .setNegativeButton("取消", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
-                                //刷新friends的数据，主要是为了更新friends的size()
-                                friends = biz.getAllFriends();
-                                Log.i("FriendListTest",String.valueOf("当前好友数量："+friends.size()));
-                                Log.i("FriendListTest",String.valueOf("当前最后一位好友的id值："+friends.get(adapter.getCount()-1).getId()));
-                                adapter.addItem(new Friend(friends.get(adapter.getCount()-1).getId()+1,name.getText().toString(),sex.getText().toString(),phone.getText().toString()));
-//                                //另一种添加的方法，注意，FriendBiz类的实例对象必须是同一个
-//                                biz.addFriend(friends.get(adapter.getCount()-1).getId()+1,name.getText().toString(),sex.getText().toString(),phone.getText().toString());
-                                adapter.notifyDataSetChanged();
-                                Toast.makeText(FriendListTest.this, "好友信息添加完毕！", Toast.LENGTH_SHORT).show();
+                                dialog.dismiss();
                             }
                         })
-                        .setNegativeButton("取消",null)
                         .setCancelable(false)
                         .show();
+                alertDialog.getButton(AlertDialog.BUTTON_POSITIVE).setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        for (int i=0;i<adapter.getCount();i++){
+                            Friend friend_temp = friends.get(i);
+                            if(id.getText().toString().equals(friend_temp.getId())){
+                                Toast.makeText(FriendListTest.this, "id号重复！", Toast.LENGTH_SHORT).show();
+                                //return后会保持原对话框状态
+                                return;
+                            }
+                        }
+                        friends = biz.getAllFriends();
+                        adapter.addItem(new Friend(id.getText().toString(),name.getText().toString(),sex.getText().toString(),phone.getText().toString()));
+                        adapter.notifyDataSetChanged();
+                        Toast.makeText(FriendListTest.this, "好友信息添加完毕！", Toast.LENGTH_SHORT).show();
+                        alertDialog.dismiss();
+                    }
+                });
+                break;
+            case R.id.menu_log:
+                AlertDialog.Builder builder = new AlertDialog.Builder(FriendListTest.this);
+                builder.setTitle("开发日志")
+                        .setMessage("2020.4.19（日）：实现大部分功能。\n" +
+                                "2020.4.20（一）：完成所有功能。" +
+                                "2020.4.26（日）：修改部分功能：id号可以修改；优化部分代码。\n")
+                        .setPositiveButton("确定",null)
+                        .setNegativeButton("取消",null)
+                        .setCancelable(true)
+                        .show();
 
+                break;
         }
-
         return super.onOptionsItemSelected(item);
     }
 
-    /*反射得到menu的setOptionalIconsVisible方法，这样就可以看到icon了，谷歌真是司马了*/
+    /*反射得到menu的setOptionalIconsVisible方法，这样就可以看到icon了，因为谷歌默认屏蔽了显示icon*/
     private void setIconsVisible(Menu menu, boolean flag) {
         //判断menu是否为空
         if(menu != null) {
@@ -137,11 +163,10 @@ public class FriendListTest extends AppCompatActivity {
         final Friend friend = (Friend) adapter.getItem(position);
         switch(item.getItemId()){
             case 0: //详情
-                Toast.makeText(FriendListTest.this, "你选择的是"+item.getTitle(), Toast.LENGTH_LONG).show();
                 builder.setTitle("详情")
                         .setIcon(R.drawable.friend_info)
                         .setMessage("好友信息：\n"+
-                                "编号："+(position+1)+"\n"+
+                                "编号："+friend.getId()+"\n"+
                                 "姓名："+friend.getName()+"\n"+
                                 "性别："+friend.getSex()+"\n"+
                                 "电话："+friend.getPhone())
@@ -151,13 +176,12 @@ public class FriendListTest extends AppCompatActivity {
                         .show();
                 break;
             case 1://修改
-                Toast.makeText(FriendListTest.this, "你选择的是"+item.getTitle(), Toast.LENGTH_LONG).show();
                 LayoutInflater inflater = LayoutInflater.from(FriendListTest.this);
                 View update_view = inflater.inflate(R.layout.friend_update,null);
                 id = update_view.findViewById(R.id.friend_id);
                 name = update_view.findViewById(R.id.friend_name);
                 phone = update_view.findViewById(R.id.friend_phone);
-                RadioGroup sexGroup = update_view.findViewById(R.id.friend_sex);
+                sexGroup = update_view.findViewById(R.id.friend_sex);
                 //给朋友信息设置信息初始值
                 id.setText(String.valueOf(friend.getId()));
                 name.setText(String.valueOf(friend.getName()));
@@ -173,41 +197,53 @@ public class FriendListTest extends AppCompatActivity {
                 }
                 sex.setChecked(true);
                 //建造对话框
-                builder.setView(update_view)
+                final AlertDialog alertDialog = new AlertDialog.Builder(FriendListTest.this)
+                        .setView(update_view)
                         .setTitle("修改")
                         .setIcon(R.drawable.friend_update)
-                        .setPositiveButton("确定", new DialogInterface.OnClickListener() {
+                        .setPositiveButton("确定", null)
+                        .setNegativeButton("取消", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
-                                //修改在friends列表中的好友信息
-                                friend.setName(String.valueOf(name.getText()));
-                                friend.setPhone(String.valueOf(phone.getText()));
-                                if(!sex.isChecked()){
-                                    String ssex = sex.getText().toString();
-                                    if(ssex.equals("男")){
-                                        friend.setSex("女");
-                                    }else{
-                                        friend.setSex("男");
-                                    }
-                                }
-                                adapter.updateItem(position,friend);
-//                                biz.updateFriend(position,friend);
-                                adapter.notifyDataSetChanged();
-                                Toast.makeText(FriendListTest.this, "好友信息修改完毕！", Toast.LENGTH_SHORT).show();
-
+                                dialog.dismiss();
                             }
                         })
-                        .setNegativeButton("取消",null)
                         .setCancelable(false)
                         .show();
+                alertDialog.getButton(AlertDialog.BUTTON_POSITIVE).setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        for (int i=0;i<adapter.getCount();i++){
+                            Friend friend_temp = friends.get(i);
+                            if(id.getText().toString().equals(friend_temp.getId())){
+                                Toast.makeText(FriendListTest.this, "id号重复！", Toast.LENGTH_SHORT).show();
+                                //return后会保持原对话框状态
+                                return;
+                            }
+                        }
+                        friend.setId(id.getText().toString());
+                        friend.setName(String.valueOf(name.getText()));
+                        friend.setPhone(String.valueOf(phone.getText()));
+                        if(!sex.isChecked()){
+                            String ssex = sex.getText().toString();
+                            if(ssex.equals("男")){
+                                friend.setSex("女");
+                            }else{
+                                friend.setSex("男");
+                            }
+                        }
+                        adapter.updateItem(position,friend);
+                        adapter.notifyDataSetChanged();
+                        Toast.makeText(FriendListTest.this, "好友信息修改完毕！", Toast.LENGTH_SHORT).show();
+                        alertDialog.dismiss();
+                    }
+                });
                 break;
             case 2://删除
-                Log.i("FriendListTest",String.valueOf(position));
-                Log.i("FriendListTest",String.valueOf(friends.size()));
                 builder.setTitle("提示")
                         .setIcon(R.drawable.friend_warn)
                         .setMessage("好友信息：\n"+
-                                "编号："+(position+1)+"\n"+
+                                "编号："+friend.getId()+"\n"+
                                 "姓名："+friend.getName()+"\n"+
                                 "性别："+friend.getSex()+"\n"+
                                 "电话："+friend.getPhone()+"\n"+
@@ -216,8 +252,6 @@ public class FriendListTest extends AppCompatActivity {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
                                 adapter.removeItem(position);
-//                                //另一种删除的方法
-//                                biz.removeFriend(position);
                                 adapter.notifyDataSetChanged();
                                 Toast.makeText(FriendListTest.this, "好友已删除！", Toast.LENGTH_SHORT).show();
                             }

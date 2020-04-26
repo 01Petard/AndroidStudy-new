@@ -15,7 +15,7 @@ public class FriendBiz {
     public ArrayList<Friend> getAllFriends(){
         return dao.searchAll();
     }
-    public void addFriend(int id,String name,String sex,String phone){
+    public void addFriend(String id,String name,String sex,String phone){
         dao.addFriend(id,name,sex,phone);
     }
     public void updateFriend(int id,Friend friend){

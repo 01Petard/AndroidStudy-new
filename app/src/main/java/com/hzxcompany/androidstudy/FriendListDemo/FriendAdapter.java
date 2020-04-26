@@ -54,7 +54,7 @@ public class FriendAdapter extends BaseAdapter {
     }
     @Override
     public long getItemId(int position) {
-        return friends.get(position).getId();
+        return Integer.parseInt(friends.get(position).getId());
     }
     /**
      * 返回指定位置数据绑定的item convertView重用
